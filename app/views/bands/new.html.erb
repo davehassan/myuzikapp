@@ -1,0 +1,16 @@
+<h1>New Bloody Band!!!</h1>
+
+<form action="<%= bands_url %>" method="POST">
+  <%= auth_token %>
+
+  <label>
+    Wat's their fooken name!?!
+    <br>
+    <input
+      type="text"
+      name="band[name]"
+    >
+  </label><br>
+
+  <button>Tell Me!</button>
+</form>

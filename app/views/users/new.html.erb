@@ -1,0 +1,22 @@
+<h1>New Bloody User M8!!!!</h1>
+<%= render "shared/errors" %>
+
+<form action="<%= users_url %>" method="post">
+  <%= auth_token %>
+
+  <label>Email
+  <input
+    type="text"
+    name="user[email]"
+    value="<%= @user.email %>"
+  ></label><br>
+
+  <label>Password
+  <input
+    type="password"
+    name="user[password]"
+    value="<%= @user.password %>"
+  ></label><br>
+
+  <button>Submit!</button>
+</form>

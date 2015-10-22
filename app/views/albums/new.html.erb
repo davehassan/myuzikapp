@@ -1,0 +1,26 @@
+<h1>New Album??!?</h1>
+<form action="<%= albums_url %>" method="POST">
+  <%= auth_token %>
+
+  <label>Wat's it called, fooker?
+    <input type="text" name="album[name]">
+  </label><br>
+
+  <label>Who made the damn thing?
+    <select name="album[band_id]">
+      <% Band.all.each do |band| %>
+        <option value="<%=band.id%>" <%= "selected" if band.id == @band.id %> >
+          <%= band.name %></option>
+      <% end %>
+    </select>
+  </label><br>
+
+  <label>Studio Trash?
+    <input type="radio" name="album[recorded]" value="Studio">
+  </label>
+  <label>Live Bullshit?
+    <input type="radio" name="album[recorded]" value="Live">
+  </label><br>
+
+  <button>Tell Me!</button>
+</form>
